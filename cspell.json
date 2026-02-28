@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": [
+    "src/**/*.md"
+  ],
+  "ignorePaths": [
+    "book/**",
+    "node_modules/**"
+  ],
+  "words": [
+    "agentic",
+    "Anthropic",
+    "bunx",
+    "culting",
+    "Codex",
+    "context7",
+    "heisenberg",
+    "llms",
+    "lazycheck",
+    "mdbook",
+    "OpenCode",
+    "playwright",
+    "Pocock",
+    "Shadcn",
+    "testcontainers",
+    "Turborepo",
+    "unreviewed",
+    "webfetch"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "agentic-coding-field-manual",
+  "private": true,
+  "scripts": {
+    "lint:md": "bun run lint:md:markdown && bun run lint:md:spelling",
+    "lint:md:markdown": "markdownlint \"src/**/*.md\"",
+    "lint:md:spelling": "cspell \"src/**/*.md\"",
+    "lint:md:fix": "markdownlint --fix \"src/**/*.md\""
+  },
+  "devDependencies": {
+    "cspell": "^9.2.1",
+    "markdownlint-cli": "^0.47.0"
+  }
+}
