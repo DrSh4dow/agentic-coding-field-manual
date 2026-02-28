@@ -2,7 +2,7 @@
 
 A practical, opinionated manual for using AI coding agents with production-grade engineering discipline.
 
-The biggest risk of AI coding isn't bad code -- it's loss of agency. A gradual surrender of control over your own codebase. This manual gives you the workflow to move faster without losing your judgment. The core thesis: **you drive, AI types.**
+The biggest risk of AI coding isn't bad code - it's loss of agency. A gradual surrender of control over your own codebase. This manual gives you the workflow to move faster without losing your judgment. The core thesis: **you drive, AI types.**
 
 ## Who This Is For
 
