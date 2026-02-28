@@ -1,0 +1,60 @@
+name: Markdown Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint-md:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.22
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run markdown lint flow
+        run: bun run lint:md
+
+  build-book:
+    runs-on: ubuntu-latest
+    env:
+      MDBOOK_VERSION: 0.5.2
+      MDBOOK_SHA256: 084e4342ba564db270108763e404a7d1f309d932651a22484e93c0dc1a071f6d
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdbook (pinned and verified)
+        run: |
+          curl --fail --location --silent --show-error \
+            "https://github.com/rust-lang/mdBook/releases/download/v${MDBOOK_VERSION}/mdbook-v${MDBOOK_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            --output /tmp/mdbook.tar.gz
+          printf "%s  %s\n" "$MDBOOK_SHA256" "/tmp/mdbook.tar.gz" | sha256sum --check --strict --status
+          tar -xzf /tmp/mdbook.tar.gz -C /tmp
+          install -m 0755 /tmp/mdbook /usr/local/bin/mdbook
+
+      - name: Build book
+        run: mdbook build
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check internal and external links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,429
+            --exclude-mail
+            --exclude "https://mcp.context7.com/mcp"
+            "./src/**/*.md"
+            "./README.md"
