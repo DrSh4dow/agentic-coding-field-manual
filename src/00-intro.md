@@ -28,8 +28,8 @@ Every chapter in this manual targets at least one of these. The goal is the same
 
 ## The Mental Model
 
-AI is a fast typist with encyclopedic knowledge and zero judgment. It produces statistically average code - the mean of everything it's seen. Left unconstrained, you get the average of every tutorial, every Stack Overflow answer, every GitHub repo in its training data.
+AI is a fast typist with encyclopedic knowledge and no stake in your system. It produces statistically average code - the mean of everything it's seen. Left unconstrained, you get the average of every tutorial, every Stack Overflow answer, every GitHub repo in its training data.
 
-Your job is to constrain it: tell it *what* to build, *how* to build it, and reject anything that doesn't meet your standards.
+Your job is to constrain it: tell it *what* to build, *how* to build it, think alongside it on the hard problems, and reject anything that doesn't meet your standards.
 
 You drive. AI types.
