@@ -54,7 +54,6 @@ jobs:
             --verbose
             --no-progress
             --accept 200,429
-            --exclude-mail
             --exclude "https://mcp.context7.com/mcp"
             "./src/**/*.md"
             "./README.md"
