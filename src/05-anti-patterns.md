@@ -1,15 +1,15 @@
 # 05 - Anti-Patterns
 
-## When NOT to Use AI
+## When NOT to Delegate to AI
 
-AI accelerates implementation of known solutions. It's net-negative for:
+There's a difference between letting AI decide and using AI to think harder. The anti-pattern isn't involving AI in hard problems - it's handing the wheel over on the problems where your judgment matters most.
 
-* **Architecture decisions** - It gives you a plausible-sounding answer that's the average of everything it's seen. Your system isn't average. Use plan mode to rubber-duck, then decide yourself.
-* **Security-critical code** - Auth flows, encryption, access control. One subtle bug is a breach, and the model will confidently produce subtle bugs.
-* **Performance-sensitive paths** - Hot loops, memory layout, cache behavior. AI writes *readable* code, not *fast* code.
-* **Novel algorithms** - If the solution doesn't exist in training data, the model will hallucinate something that looks right and passes type checks. Plausible nonsense.
+* **Architecture decisions** - Don't prompt "design my system" and accept what comes back. Do use plan mode to pressure-test your own design - surface tradeoffs, challenge assumptions, explore alternatives you hadn't considered. The model is a sparring partner, not the architect. You decide.
+* **Security-critical code** - Auth flows, encryption, access control. AI can write these - the danger isn't who produces the code, it's accepting it without understanding the end-to-end architecture and reasoning behind every decision. One subtle bug is a breach, and the model will confidently produce subtle bugs. Walk through the implementation step by step. Challenge the threat model. Poke at edge cases. If you can't explain why every line exists, it doesn't ship.
+* **Performance-sensitive paths** - Hot loops, memory layout, cache behavior. AI writes *readable* code, not *fast* code. But it's useful as a companion while you reason about cache lines, allocation patterns, or algorithmic complexity - ask it to challenge your assumptions or enumerate cases you might be missing.
+* **Novel algorithms** - If the solution doesn't exist in training data, the model will hallucinate something plausible. Don't let it generate the algorithm. Do use it to rubber-duck your approach, validate your reasoning at each step, and catch logical gaps while you work through the problem yourself.
 
-For these, think yourself. Write the code yourself. Use AI to review it, not produce it.
+The common thread: you do the thinking. AI makes your thinking more rigorous. The moment you stop reasoning and start accepting, you've delegated the one thing that can't be delegated.
 
 ## The Acceptance Spiral
 
