@@ -1,4 +1,15 @@
 [book]
 title = "Agentic Coding Field Manual"
-authors = ["drsh4dow"]
+description = "A practical, opinionated manual for using AI coding agents with production-grade engineering discipline."
+authors = ["Daniel Moretti"]
 language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+site-url = "/agentic-coding-field-manual/"
+git-repository-url = "https://github.com/drsh4dow/agentic-coding-field-manual"
+edit-url-template = "https://github.com/drsh4dow/agentic-coding-field-manual/edit/main/{path}"
+no-section-label = true
