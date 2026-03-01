@@ -47,22 +47,6 @@ Install OpenCode, then update `~/.config/opencode/opencode.json`:
         "@playwright/mcp@latest"
       ]
     }
-  },
-  "lsp": {
-    "biome": {
-      "command": [
-        "biome",
-        "lsp-proxy"
-      ],
-      "extensions": [
-        ".js",
-        ".jsx",
-        ".ts",
-        ".tsx",
-        "json",
-        "jsonc"
-      ]
-    }
   }
 }
 ```
